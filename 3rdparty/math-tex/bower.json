@@ -1,0 +1,15 @@
+{
+    "name": "math-tex",
+    "version": "0.21",
+    "description": "Custom Element for typesetting TeX expressions using MathJax",
+    "license": "MIT",
+    "main": "math-tex.html",
+    "keywords": [
+        "web-components", "mathjax", "math"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ]
+}
