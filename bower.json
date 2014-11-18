@@ -1,0 +1,17 @@
+{
+  "name": "eduZOO-components",
+  "version": "0.0.1",
+  "homepage": "https://github.com/educationZEN/eduZOO-components",
+  "authors": [
+    "joernweissenborn <joern.weissenborn@gmail.com>"
+  ],
+  "description": "Webcomponents for creating eduZOOs",
+  "license": "lGPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
