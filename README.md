@@ -1,6 +1,13 @@
 eduzoo-components
 =================
 
-This repository will hold all the components necessary to write your own eduZOO
+This repository holds all the components necessary to write your own eduZOO
 
-This repo will be filled with the eduZOO webcomponents soon. The old deprecated eduZOO app cann be found under github.com/educationzen/eduzoo-app.
+The old deprecated eduZOO app can be found under github.com/educationzen/eduzoo-app.
+
+Current Import Paths
+-------------------
+
+`<eduzoo-definition>`: https://github.com/educationZEN/eduzoo-components/eduzoo-definition/eduzoo-definition.html
+
+will be continued...
