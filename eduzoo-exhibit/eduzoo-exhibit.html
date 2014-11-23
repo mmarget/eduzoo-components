@@ -1,0 +1,30 @@
+<link rel="import" href="http://www.polymer-project.org/components/polymer/polymer.html">
+<link rel="import" href="http://www.polymer-project.org/components/paper-shadow/paper-shadow.html">
+
+
+<polymer-element name="eduzoo-exhibit" attributes="cardtitle">
+    <template>
+        <link rel="stylesheet" href="eduzoo-exhibit.css">
+
+        <div id="content" relative>
+
+            <paper-shadow z="1">
+                <h2>{{cardtitle}}</h2>
+                <content></content>
+            </paper-shadow>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            /**
+             * The `exhibit-name` attribute sets the title of the exhibit
+             *
+             * @attribute cardtitle
+             * @type string
+             * @default 'Exhibit'
+             */
+            cardtitle: 'Exhibit'
+        })
+    </script>
+
+</polymer-element>
