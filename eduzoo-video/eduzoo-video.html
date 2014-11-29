@@ -1,0 +1,53 @@
+<link rel="import" href="https://www.polymer-project.org/components/polymer/polymer.html">
+
+<link rel="import" href="../eduzoo-exhibit/eduzoo-exhibit.html">
+<link rel="import" href="../3rdparty/youtube-embed/dist/youtube.html">
+
+<!--
+Element providing an eduzoo-exhibit  with embedded youtube video.
+
+##### Example
+
+
+    <eduzoo-video videoid="e7hq2BeTVW8">
+        My describtion
+    </eduzoo-video>
+
+@element eduzoo-video
+@blurb Element providing an eduzoo-exhibit  with embedded youtube video.
+@status alpha
+@homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-video
+-->
+<polymer-element name="eduzoo-video" attributes="videoid">
+
+    <template>
+
+
+        <eduzoo-exhibit exhibitname="Video">
+                <div>
+            <youtube-embed width=768 height=432 videoid="{{videoid}}"></youtube-embed>
+                </div>
+            <content></content>
+        </eduzoo-exhibit>
+
+
+    </template>
+
+    <script>
+
+        Polymer({
+            /**
+             * The `videoid` attribute sets id of the video.
+             *
+             * @attribute videoid
+             * @type string
+             * @default ''
+             */
+            videoid: ''
+
+
+        });
+
+    </script>
+
+</polymer-element>
