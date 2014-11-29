@@ -1,29 +1,54 @@
-<!--
-    @license
-    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-    Code distributed by Google as part of the polymer project is also
-    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
+
 <!doctype html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>seed-element Demo</title>
+  <title>eduzoo-quiz-choice Demo</title>
 
-  <script src="../webcomponentsjs/webcomponents.min.js"></script>
-  <link rel="import" href="seed-element.html">
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+  <link rel="import" href="eduzoo-quiz.html">
+  <link rel="import" href="eduzoo-quiz-choice.html">
 
 </head>
 <body unresolved>
 
-  <p>An example of using <code>&lt;seed-element></code>:</p>
+  <p>An example of using <code>&lt;eduzoo-quiz></code>:</p>
 
-  <seed-element>
-    <h2>Hello seed-element</h2>
-  </seed-element>
+  <eduzoo-quiz>
+      <div>
+          Some additional infos.
+          default quiztype is 'multiple-choice'
+      </div>
+      <eduzoo-quiz-choice correct>correct</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice correct>also correct</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice>not correct</eduzoo-quiz-choice>
+  </eduzoo-quiz>
+
+  <eduzoo-quiz quiztype="single-choice">
+
+      <div>
+          quiztype = 'single-choice'
+      </div>
+      <eduzoo-quiz-choice correct>correct</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice>not correct</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice>also not correct</eduzoo-quiz-choice>
+  </eduzoo-quiz>
+
+  <eduzoo-quiz question="My own question?">
+
+      <eduzoo-quiz-choice correct>correct</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice correct>also correct</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice>not correct</eduzoo-quiz-choice>
+  </eduzoo-quiz>
+
+  <eduzoo-quiz lang="ger">
+      <div>
+          Deutsche Sprache
+      </div>
+      <eduzoo-quiz-choice correct>korrekt</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice correct>auch korrekt</eduzoo-quiz-choice>
+      <eduzoo-quiz-choice>nicht korrekt</eduzoo-quiz-choice>
+  </eduzoo-quiz>
 
 </body>
 </html>
