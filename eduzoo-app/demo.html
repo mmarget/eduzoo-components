@@ -11,13 +11,15 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>seed-element Demo</title>
+  <title>eduzoo-app Demo</title>
 
     <script src="https://www.polymer-project.org/webcomponents.js"></script>
   <link rel="import" href="eduzoo-app.html">
   <link rel="import" href="../eduzoo-exhibit/eduzoo-exhibit.html">
   <link rel="import" href="../eduzoo-quiz/eduzoo-quiz.html">
   <link rel="import" href="../eduzoo-quiz/eduzoo-quiz-choice.html">
+  <link rel="import" href="../eduzoo-definition/eduzoo-definition.html">
+  <link rel="import" href="../eduzoo-example/eduzoo-example.html">
 
     <style>
         eduzoo-app::shadow core-toolbar {
@@ -43,7 +45,13 @@
          <eduzoo-quiz-choice>no</eduzoo-quiz-choice>
          <eduzoo-quiz-choice correct>yes</eduzoo-quiz-choice>
      </eduzoo-quiz>
+    <eduzoo-example>
+        Just as an example
+    </eduzoo-example>
 
+     <eduzoo-definition>
+        By definition.
+    </eduzoo-definition>
  </eduzoo-app>
 
 </body>

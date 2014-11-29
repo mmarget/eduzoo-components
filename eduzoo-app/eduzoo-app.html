@@ -46,16 +46,25 @@ Apply custom color to titlebar by adding to css:
         <div  fit layout vertical center-justified>
             <core-scroll-header-panel id="header"  condenses keepCondensedHeader  flex mode="waterfall-tall">
                 <core-toolbar class="tall">
+
                     <template if="{{showclass}}">
                         <div id="eduzooclass"   flex class="middle indent title" style="-webkit-transform: scale(1) translateZ(0px); transform: scale(1) translateZ(0px);">
+                            {{zooTitle}}
+                        </div>
+                        <div id="eduzootitle" flex class="bottom indent subtitle">
                             {{courseName}}
                         </div>
                     </template>
-                    <div id="eduzootitle" flex class="bottom indent subtitle">
-                        {{zooTitle}}
-                    </div>
+
+                    <template if="{{!showclass}}">
+                        <div id="" flex class="bottom indent subtitle">
+                            {{zooTitle}}
+                        </div>
+                    </template>
+
                 </core-toolbar>
-                <div id="background" class="content" style="margin: 0 60px 60px 60px;">
+
+                <div  class="content">
                     <content></content>
                 </div>
             </core-scroll-header-panel>
@@ -94,17 +103,15 @@ Apply custom color to titlebar by adding to css:
 
                 });
 
-                that = this
+                var that = this;
                 this.$.header.addEventListener('core-header-transform', function(e) {
-                    that.showclass = (e.detail.y==0)
-
-                    var d = e.detail;
-                    var m = d.height - d.condensedHeight;
-                    var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
-                    titleStyle.transform = titleStyle.webkitTransform =
-                            'scale(' + scale + ') translateZ(0)';
+                    that.setShowClass(e.detail.y==0)
                 });
 
+            },
+
+            setShowClass: function(show) {
+                this.showclass = show
             }
         });
 
