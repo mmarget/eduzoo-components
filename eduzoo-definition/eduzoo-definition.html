@@ -3,41 +3,45 @@
 <link rel="import" href="../eduzoo-exhibit/eduzoo-exhibit.html">
 
 <!--
-Element providing solution to no problem in particular.
+Element providing an eduzoo-exhibit with title set to "Definition" or userspecific.
 
 ##### Example
 
-    <seed-element></seed-element>
 
-@element seed-element
-@blurb Element providing solution to no problem in particular.
+        <eduzoo-definition definitiontitle="My Definition Title">
+            My Content
+        </eduzoo-definition>
+
+@element eduzoo-definition
+@blurb Element providing an eduzoo-exhibit with title set to "Definition" or userspecific.
 @status alpha
-@homepage http://polymerlabs.github.io/seed-element
+@homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-definition
 -->
-<polymer-element name="eduzoo-definition" extends="eduzoo-exhibit">
+<polymer-element name="eduzoo-definition" attributes="definitiontitle">
 
-  <template>
+    <template>
 
 
-    <shadow></shadow>
+        <eduzoo-exhibit exhibitname="{{definitiontitle}}">
+            <content></content>
+        </eduzoo-exhibit>
+    </template>
 
-  </template>
-
-  <script>
+    <script>
 
         Polymer({
             /**
-             * The `exhibit-name` attribute sets the title of the definition
+             * The `definitiontitle` attribute sets the title of the definition
              *
-             * @attribute cardtitle
+             * @attribute definitiontitle
              * @type string
              * @default 'Definition'
              */
-            cardtitle: 'Definition'
+            definitiontitle: 'Definition'
 
 
-    });
+        });
 
-  </script>
+    </script>
 
 </polymer-element>

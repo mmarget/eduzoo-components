@@ -3,16 +3,19 @@
 <link rel="import" href="../eduzoo-exhibit/eduzoo-exhibit.html">
 
 <!--
-Element providing solution to no problem in particular.
+Element providing an eduzoo-exhibit with title set to "Example" or language specific.
 
 ##### Example
 
-    <seed-element></seed-element>
 
-@element seed-element
-@blurb Element providing solution to no problem in particular.
+        <eduzoo-example>
+            My Content
+        </eduzoo-example>
+
+@element eduzoo-exhibit
+@blurb Element providing an eduzoo-exhibit with title set to "Example" or language specific.
 @status alpha
-@homepage http://polymerlabs.github.io/seed-element
+@homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-example
 -->
 <polymer-element name="eduzoo-example" extends="eduzoo-exhibit">
 
@@ -27,13 +30,44 @@ Element providing solution to no problem in particular.
 
         Polymer({
             /**
-             * The `cardtitle` attribute sets the title of the definition
+             * The `exhibitname` property sets the title of the exhibit
              *
-             * @attribute cardtitle
+             * @property exhibitname
              * @type string
              * @default 'Example'
              */
-            cardtitle: 'Example'
+            exhibitname: 'Example',
+
+            /**
+             * `lang` defines the language of the element.
+             *
+             * Choices are 'ger' and 'eng'.
+             *
+             * Default is 'eng'.
+             *
+             * @attribute lang
+             * @type string
+             * @default 'eng'
+             */
+            lang: "eng",
+
+            /**
+             * The `setExhibitname` method sets 'exhibitname' corresponding to the language.
+             *
+             * @method setExhibitname
+             */
+            setExhibitname: function() {
+                switch (this.lang) {
+                    case "ger":
+                        this.exhibitname = "Beispiel";
+                        break;
+
+                }
+            },
+
+            ready: function(){
+                this.setExhibitname();
+            }
 
 
         });

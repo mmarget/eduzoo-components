@@ -9,25 +9,21 @@
 -->
 <!doctype html>
 <html>
-<head>
+  <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>eduzoo-definition Demo</title>
+    <title>Tests</title>
 
-    <script src="https://www.polymer-project.org/webcomponents.js"></script>
-    <link rel="import" href="eduzoo-definition.html">
+    <script src="../../platform/platform.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+  </head>
 
-</head>
-<body unresolved>
-
-<p>An example of using <code>&lt;eduzoo-definition></code>:</p>
-
-<eduzoo-definition definitiontitle="My Definition Title">
-    My Content
-</eduzoo-definition>
-
-<eduzoo-definition>
-    Standarttitle
-</eduzoo-definition>
-
-</body>
+  <body>
+    <script>
+      // Load and run all tests (.html, .js) as one suite:
+      WCT.loadSuites([
+        'basic-test.html',
+      ]);
+    </script>
+  </body>
 </html>
