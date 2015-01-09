@@ -1,10 +1,7 @@
 eduzoo-components
 =================
 
-<<<<<<< HEAD
-This repository holds all the components necessary to write your own eduZOO
-
-The old deprecated eduZOO app can be found under github.com/educationzen/eduzoo-app.
+This repository holds all the components necessary to write your own eduZOO.
 
 List of elements
 -------------------
@@ -39,5 +36,3 @@ Eduzoo Quiz
 Eduzoo Quiz Choice
 
 ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzeduzoo-quiz-choice/eduzoo-quiz-choice.html">`
-
->>>>>>> gh-pages
