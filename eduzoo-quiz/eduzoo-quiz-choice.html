@@ -1,0 +1,109 @@
+<!--<link rel="import" href="http://www.polymer-project.org/components/polymer/polymer.html">-->
+
+<!--<link rel="import" href="https://www.polymer-project.org/components/paper-checkbox/paper-checkbox.html">-->
+
+
+
+<!--
+Element to use in combination with `eduzoo-quiz-element`.
+
+##### Example
+
+    <seed-element></seed-element>
+
+@element seed-element
+@blurb Element providing solution to no problem in particular.
+@status alpha
+@homepage http://polymerlabs.github.io/seed-element
+-->
+<polymer-element name="eduzoo-quiz-choice" attributes="correct">
+
+    <template>
+
+        <link rel="stylesheet" href="eduzoo-quiz-choice.css">
+
+        <core-field>
+            <paper-checkbox checked="{{checked}}" on-change="{{onChange}}"></paper-checkbox>
+            <div id="answerstring">
+                <content></content>
+            </div>
+        </core-field>
+    </template>
+
+    <script>
+
+        Polymer({
+            /**
+             * `correct` attribute defines if this choice is a correct one.
+             * Default is 'false'.
+             *
+             * @attribute correct
+             * @type bool
+             * @default 'false'
+             */
+            correct: false,
+
+            /**
+             * `checked` property is true if the users checks the checkbox.
+             * Default is 'false'.
+             *
+             * @attribute checked
+             * @type bool
+             * @default 'false'
+             */
+            checked: false,
+
+            /**
+             * The `select` event is fired whenever we
+             * call onChange and the checked state is true.
+             *
+             * @event select
+             **/
+
+            /**
+             * The `onChange` method will fire the `select` event if `checked` is true
+             *
+             * @method onChange
+             */
+            onChange: function(){
+                if (this.checked){
+                    this.fire('select');
+                }
+
+            },
+
+            /**
+             * The `unCheck` method will set `checked` to false
+             *
+             * @method unCheck
+             */
+            unCheck: function(){
+                this.checked = false
+            },
+
+            /**
+             * The `isCorrect` returns the value of `correct`
+             *
+             * @method isCorrect
+             * @return {bool} Returns the value of `correct`
+             *
+             */
+            isCorrect: function(){
+                return this.correct
+            } ,
+            /**
+             * The `isChecked` returns the value of `checked`
+             *
+             * @method isChecked
+             * @return {bool} Returns the value of `checked`
+             *
+             */
+            isChecked: function(){
+                return this.checked
+            }
+
+        });
+
+    </script>
+
+</polymer-element>

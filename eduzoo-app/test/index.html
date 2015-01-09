@@ -9,24 +9,21 @@
 -->
 <!doctype html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>eduzoo-exhibit Demo</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>Tests</title>
 
-  <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
-  <link rel="import" href="eduzoo-exhibit.html">
+    <script src="../../platform/platform.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+  </head>
 
-</head>
-<body unresolved>
-
-  <p>An example of using <code>&lt;eduzoo-exhibit></code>:</p>
-
-
-<eduzoo-exhibit>
-    I am a standart exhibit. Roaar!!
-</eduzoo-exhibit>
-<eduzoo-exhibit exhibitname="I have my own title">
-    Uahahahaha!!
-</eduzoo-exhibit>
-</body>
+  <body>
+    <script>
+      // Load and run all tests (.html, .js) as one suite:
+      WCT.loadSuites([
+        'basic-test.html',
+      ]);
+    </script>
+  </body>
 </html>

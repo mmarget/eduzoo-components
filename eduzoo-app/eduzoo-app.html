@@ -1,0 +1,120 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+<link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
+
+<!--
+Element providing scaffold for eduZOOs.
+
+Apply custom color to titlebar by adding to css:
+
+        eduzoo-app::shadow core-toolbar {
+            background-color: #add8e6;
+        }
+
+##### Example
+
+        <eduzoo-app zooTitle="Demo Zoo"
+                    courseName="educationZEN presents eduZOO"
+                 >
+            Body content...
+
+             <eduzoo-exhibit>
+                 Exhibits integrate seamless
+             </eduzoo-exhibit>
+
+             .. more content ...
+
+             <eduzoo-quiz quiztype="single-choice" question="Cool?">
+                 <eduzoo-quiz-choice>no</eduzoo-quiz-choice>
+                 <eduzoo-quiz-choice correct>yes</eduzoo-quiz-choice>
+             </eduzoo-quiz>
+
+         </eduzoo-app>
+
+@element eduzoo-app
+@blurb Element providing scaffold for eduZOOs.
+@version alpha
+@homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-app
+-->
+<polymer-element name="eduzoo-app" attributes="zooTitle courseName">
+
+    <template>
+
+        <link rel="stylesheet" href="eduzoo-app.css">
+
+        <div  fit layout vertical center-justified>
+            <core-scroll-header-panel id="header"  condenses keepCondensedHeader  flex mode="waterfall-tall">
+                <core-toolbar class="tall">
+
+                    <template if="{{showclass}}">
+                        <div id="eduzooclass"   flex class="middle indent title" style="-webkit-transform: scale(1) translateZ(0px); transform: scale(1) translateZ(0px);">
+                            {{zooTitle}}
+                        </div>
+                        <div id="eduzootitle" flex class="bottom indent subtitle">
+                            {{courseName}}
+                        </div>
+                    </template>
+
+                    <template if="{{!showclass}}">
+                        <div id="" flex class="bottom indent subtitle">
+                            {{zooTitle}}
+                        </div>
+                    </template>
+
+                </core-toolbar>
+
+                <div  class="content">
+                    <content></content>
+                </div>
+            </core-scroll-header-panel>
+        </div>
+    </template>
+
+    <script>
+
+        Polymer({
+            /**
+             * The `zooTitle` attribute sets the title of the zoo
+             *
+             * @attribute zooTitle
+             * @type string
+             * @default 'zooTitle Not Set'
+             */
+            zooTitle: 'zooTitle Not Set',
+            /**
+             * The `courseName` attribute sets the course name of the zoo
+             *
+             * @attribute courseName
+             * @type string
+             * @default 'courseName Not Set'
+             */
+            courseName: 'courseName Not Set',
+
+            /**
+             * `showclass` is use to hide the classtile when user is scrolling down
+             */
+            showclass: true,
+
+            ready: function() {
+                this.showclass = true
+                var titleStyle = this.$.eduzootitle.style;
+                this.$.header.addEventListener('scroll', function(e,d,s) {
+
+                });
+
+                var that = this;
+                this.$.header.addEventListener('core-header-transform', function(e) {
+                    that.setShowClass(e.detail.y==0)
+                });
+
+            },
+
+            setShowClass: function(show) {
+                this.showclass = show
+            }
+        });
+
+    </script>
+
+</polymer-element>

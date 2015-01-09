@@ -1,29 +1,46 @@
-<link rel="import" href="http://www.polymer-project.org/components/polymer/polymer.html">
-<link rel="import" href="http://www.polymer-project.org/components/paper-shadow/paper-shadow.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-shadow/paper-shadow.html">
+
+<!--
+Element providing a basic cardlike box to put in content for eduZOOs.
+
+##### Example
 
 
-<polymer-element name="eduzoo-exhibit" attributes="cardtitle">
+      <eduzoo-exhibit exhibitname="My exhibit title">My content</eduzoo-exhibit>
+
+@element eduzoo-quiz
+@blurb Element providing a basic cardlike box to put in content for eduZOOs.
+@status alpha
+@homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-exhibit
+-->
+<polymer-element name="eduzoo-exhibit" attributes="exhibitname">
     <template>
         <link rel="stylesheet" href="eduzoo-exhibit.css">
 
         <div id="content" relative>
 
             <paper-shadow z="1">
-                <h2>{{cardtitle}}</h2>
+                <h3>{{exhibitname}}</h3>
+                <hr>
+                <p>
                 <content></content>
+                </p>
             </paper-shadow>
         </div>
     </template>
     <script>
         Polymer({
             /**
-             * The `exhibit-name` attribute sets the title of the exhibit
+             * The `exhibitname` attribute sets the title of the exhibit
              *
-             * @attribute cardtitle
+             * @attribute exhibitname
              * @type string
              * @default 'Exhibit'
              */
-            cardtitle: 'Exhibit'
+            exhibitname: 'Exhibit'
+
+
         })
     </script>
 

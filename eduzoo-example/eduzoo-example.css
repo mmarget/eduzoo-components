@@ -1,0 +1,8 @@
+:host::shadow p {
+    font-size: 0.9em;
+}
+
+:host::shadow paper-shadow {
+    background-color: #F7F8FF;
+}
+
