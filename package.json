@@ -1,0 +1,9 @@
+{
+  "name": "eduzoo-components",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-gh-pages": "~0.9.1"
+  }
+}
