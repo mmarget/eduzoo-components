@@ -9,9 +9,10 @@ module.exports = function(grunt) {
 				'Vagrantfile',
 				'Gruntfile.js',
 				'bower.json',
-				'README.MD',
+				'README.md',
 				'Vagrantfile',
-				'bootstrap.sh'
+				'bootstrap.sh',
+				'LICENSE'
 			]
 		}
 
