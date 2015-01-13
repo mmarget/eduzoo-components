@@ -13,5 +13,13 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "polymer": "0.5.2",
+    "paper-elements": "Polymer/paper-elements#~0.5.2",
+    "math-tex": "*"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0-rc1"
+  }
 }
