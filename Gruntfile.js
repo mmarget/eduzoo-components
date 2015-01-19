@@ -6,12 +6,9 @@ module.exports = function(grunt) {
 				'3rdparty/**/*',
 				'eduzoo-*/**/*',
 				'bower_components/**/*',
-				'Vagrantfile',
 				'Gruntfile.js',
 				'bower.json',
 				'README.md',
-				'Vagrantfile',
-				'bootstrap.sh',
 				'LICENSE'
 			]
 		}
