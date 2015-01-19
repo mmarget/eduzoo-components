@@ -42,9 +42,9 @@ Element providing quiz functionality for eduZOOs.
         <eduzoo-exhibit exhibitname="Quiz">
 
             <div layout vertical>
-                <content select="div"></content>
-                <h3>{{question}}</h3>
                 <content></content>
+                <h3>{{question}}</h3>
+                <content select="eduzoo-quiz-choice"></content>
                 <paper-button self-end on-tap="{{checkAnswer}}">{{checkAnwerString}}</paper-button>
                 <div id="answer">
                     {{result}}

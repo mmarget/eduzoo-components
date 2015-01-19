@@ -19,5 +19,5 @@ module.exports = function(grunt) {
 	});
 	grunt.loadNpmTasks('grunt-gh-pages');
 
-	grunt.registerTask('deploy', ['gh-pages']);
+	grunt.registerTask('default', ['gh-pages']);
 };

@@ -1,6 +1,6 @@
 {
   "name": "eduZOO-components",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/educationZEN/eduZOO-components",
   "authors": [
     "joernweissenborn <joern.weissenborn@gmail.com>"
@@ -17,9 +17,14 @@
   "dependencies": {
     "polymer": "0.5.2",
     "paper-elements": "Polymer/paper-elements#~0.5.2",
-    "math-tex": "*"
+    "math-tex": "*",
+    "youtube-embed": "*"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.0.0-rc1"
+  },
+  "resolutions": {
+    "polymer": "0.5.2",
+    "core-component-page": "^0.5.0"
   }
 }
