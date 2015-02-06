@@ -1,0 +1,78 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../eduzoo-exhibit/eduzoo-exhibit.html">
+
+<link rel="import" href="../bower_components/core-collapse/core-collapse.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/youtube-embed/dist/youtube.html">
+
+<!--
+Element providing an spoiler for eduZOOs.
+
+##### Example
+
+
+    <eduzoo-spoiler spoilertitle="My Spoiler">
+        Content
+    </eduzoo-spoiler>
+
+@element eduzoo-spoiler
+@blurb Element providing an spoiler for eduZOOs
+@status alpha
+@homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-spoiler
+-->
+<polymer-element name="eduzoo-spoiler" attributes="spoilertitle">
+
+    <template>
+        <eduzoo-exhibit exhibitname="{{spoilertitle}}">
+            <template if="{{!revealed}}">
+                <div layout vertical>
+                    <paper-button self-stretch role="button" on-tap="{{reveal}}" tabindex="0">
+                        spoiler
+                    </paper-button>
+                </div>
+            </template>
+            <core-collapse id="collapse">
+                <div class="collapse-content">
+                    <content></content>
+                </div>
+            </core-collapse>
+        </eduzoo-exhibit>
+    </template>
+
+    <script>
+
+        Polymer({
+            /**
+             * The `spoilertitle` attribute sets the title of the spoiler.
+             *
+             * @attribute spoilertitle
+             * @type string
+             * @default 'spoilertitle'
+             */
+            spoilertitle: 'spoilertitle',
+
+            /**
+             * `revealed` is true after user revealed spoiler content, else false.
+             *
+             * @attribute revealed
+             * @type bool
+             * @default 'false'
+             */
+            revealed: false,
+
+            /**
+             * The `reveal` method reveals the spoiler.
+             *
+             * @method checkAnswer
+             */
+            reveal: function() {
+                this.revealed = true;
+                this.$.collapse.toggle();
+            }
+
+        });
+
+    </script>
+
+</polymer-element>
