@@ -14,17 +14,19 @@ Element providing a basic cardlike box to put in content for eduZOOs.
 @status alpha
 @homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-exhibit
 -->
-<polymer-element name="eduzoo-exhibit" attributes="exhibitname">
+<polymer-element name="eduzoo-exhibit" attributes="exhibitname notitle">
     <template>
         <link rel="stylesheet" href="eduzoo-exhibit.css">
 
         <div id="content" relative>
 
             <paper-shadow z="1">
-                <h3>{{exhibitname}}</h3>
-                <hr>
+                <template if="{{!notitle}}">
+                    <h3>{{exhibitname}}</h3>
+                    <hr>
+                </template>
                 <p>
-                <content></content>
+                    <content></content>
                 </p>
             </paper-shadow>
         </div>
@@ -38,7 +40,15 @@ Element providing a basic cardlike box to put in content for eduZOOs.
              * @type string
              * @default 'Exhibit'
              */
-            exhibitname: 'Exhibit'
+            exhibitname: 'Exhibit',
+            /**
+             * The `notitle` attribute deactivates displaying of title
+             *
+             * @attribute notitle
+             * @type bool
+             * @default 'false'
+             */
+            notitle: false
 
 
         })
