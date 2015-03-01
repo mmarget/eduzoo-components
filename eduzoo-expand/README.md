@@ -1,0 +1,2 @@
+eduzoo-spoiler
+============

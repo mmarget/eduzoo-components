@@ -46,4 +46,5 @@ core-toolbar {
     background-color: #FF9966;
     padding-bottom: 0;
     margin-bottom: 0;
+    width: calc(100% - 17px);
 }

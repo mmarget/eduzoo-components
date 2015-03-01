@@ -44,7 +44,7 @@ Apply custom color to titlebar by adding to css:
         <link rel="stylesheet" href="eduzoo-app.css">
 
         <div  fit layout vertical center-justified>
-            <core-scroll-header-panel id="header"  condenses keepCondensedHeader  flex mode="waterfall-tall">
+            <core-scroll-header-panel id="header"  condenses flex mode="waterfall-tall">
                 <core-toolbar class="tall">
 
                     <template if="{{showclass}}">
@@ -97,11 +97,7 @@ Apply custom color to titlebar by adding to css:
             showclass: true,
 
             ready: function() {
-                this.showclass = true
-                var titleStyle = this.$.eduzootitle.style;
-                this.$.header.addEventListener('scroll', function(e,d,s) {
-
-                });
+                this.showclass = true;
 
                 var that = this;
                 this.$.header.addEventListener('core-header-transform', function(e) {
