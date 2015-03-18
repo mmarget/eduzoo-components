@@ -1,7 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../eduzoo-exhibit/eduzoo-exhibit.html">
-<link rel="import" href="../bower_components/youtube-embed/dist/youtube.html">
 
 <!--
 Element providing an eduzoo-exhibit  with embedded youtube video.
@@ -25,7 +24,9 @@ Element providing an eduzoo-exhibit  with embedded youtube video.
 
         <eduzoo-exhibit exhibitname="Video">
                 <div>
-            <youtube-embed width=768 height=432 videoid="{{videoid}}"></youtube-embed>
+                    <iframe id="ytplayer" type="text/html" width="768" height="432"
+                            src="{{_url}}"
+                            frameborder="0" allowfullscreen></iframe>
                 </div>
             <content></content>
         </eduzoo-exhibit>
@@ -43,8 +44,27 @@ Element providing an eduzoo-exhibit  with embedded youtube video.
              * @type string
              * @default ''
              */
-            videoid: ''
+            videoid: '',
 
+            /**
+             * The `autoplay` attribute makes a video autoplay.
+             *
+             * @attribute autoplay
+             * @type bool
+             * @default false
+             */
+            autoplay:false,
+
+            _url:"",
+
+            ready: function() {
+
+                this._url="http://www.youtube.com/embed/"+this.videoid+"?fs=1?html5=1&autoplay="
+                if (this.autoplay) this._url = this._url+"1";
+                else this._url = this._url+"0";
+                this._url = this._url+"&origin=" + document.URL;
+                console.log(this._url)
+            }
 
         });
 

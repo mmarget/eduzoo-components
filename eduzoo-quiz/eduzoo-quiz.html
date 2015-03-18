@@ -34,7 +34,7 @@ Element providing quiz functionality for eduZOOs.
 @status alpha
 @homepage https://github.com/educationZEN/eduzoo-components/tree/master/eduzoo-quiz
 -->
-<polymer-element name="eduzoo-quiz" attributes="quiztype question" >
+<polymer-element name="eduzoo-quiz" attributes="quiztype question lang" >
 
     <template>
 
@@ -182,6 +182,8 @@ Element providing quiz functionality for eduZOOs.
              */
             checkAnswer: function(){
 
+                this.nrTries++
+
                 var right = true;
                 var nrOfAnwers = this.querySelectorAll('eduzoo-quiz-choice').length
                 var answers = this.querySelectorAll('eduzoo-quiz-choice')
@@ -197,7 +199,6 @@ Element providing quiz functionality for eduZOOs.
                 if(right){
                     this.setResultStringCorrect()
                 } else {
-                    this.nrTries++
                     this.setResultStringWrong()
                 }
             },
@@ -249,10 +250,15 @@ Element providing quiz functionality for eduZOOs.
             setResultStringCorrect: function() {
                 switch (this.lang) {
                     case "ger":
-                        this.result = "Glückwunsch! Die Antwort ist richtig";
+                        this.result = "Glückwunsch! Die Antwort ist richtig. Du hast "+this.nrTries+" Versuche gebraucht.";
                         break;
                     default:
-                        this.result = "Congratulation! Your answer is correct.";
+                        tmp = "Congratulation! Your answer is correct. You tried ";
+                            if (this.nrTries == 1) {
+                                this.result = tmp + "1 time"
+                            } else {
+                                this.result = tmp  + this.nrTries + " times."
+                            }
                         break;
                 }
             },
